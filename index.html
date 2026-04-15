@@ -168,18 +168,50 @@
       display: block; transition: transform 0.5s ease;
     }
     .venue-card:hover .venue-img { transform: scale(1.03); }
-    .venue-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(12,24,41,0.85) 0%, rgba(12,24,41,0.15) 60%);
-      display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;
+    .venue-card {
+      display: flex;
+      flex-direction: column;
+      border-radius: 2px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .venue-img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .venue-card:hover .venue-img {
+      transform: scale(1.03);
+    }
+
+    .venue-content {
+      padding: 1.5rem 2rem;
+      background: #fff;
     }
     .venue-phase {
       font-family: var(--mono); font-size: 1rem; letter-spacing: 0.15em;
       text-transform: uppercase; color: rgba(200,50,10,0.9); margin-bottom: 0.5rem;
     }
-    .venue-name { font-family: var(--serif); font-size: 1.7rem; color: #fff; margin-bottom: 0.25rem; }
-    .venue-dates { font-family: var(--mono); font-size: 1rem; color: rgba(255,255,255,0.6); letter-spacing: 0.06em; }
-    .venue-desc { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin-top: 0.6rem; font-weight: 300; line-height: 1.6; }
+    .venue-name { font-family: var(--serif); font-size: 1.7rem; color: var(--ink); margin-bottom: 0.25rem; }
+
+    .venue-dates {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .venue-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
 
     /* REGISTRATION */
     .registration { background: var(--blue); }
@@ -437,7 +469,7 @@
   <div class="venues">
     <div class="venue-card">
       <img class="venue-img" src="assets/images/ANU-venue.jpg">
-      <div class="venue-overlay">
+      <div class="venue-content">
         <p class="venue-phase">Phase I · 30 Nov – 04 Dec</p>
         <p class="venue-name">Australian National University</p>
         <p class="venue-dates">Canberra, ACT, Australia</p>
@@ -446,7 +478,7 @@
     </div>
     <div class="venue-card">
       <img class="venue-img" src="assets/images/Kioloa-venue.jpg">
-      <div class="venue-overlay">
+      <div class="venue-content">
         <p class="venue-phase">Phase II · 04 Dec – 06 Dec</p>
         <p class="venue-name">Kioloa Coastal Campus</p>
         <p class="venue-dates">New South Wales, Australia</p>
