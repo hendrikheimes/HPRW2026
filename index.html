@@ -29,7 +29,6 @@
     html { scroll-behavior: smooth; }
     body { font-family: var(--sans); background: var(--paper); color: var(--ink); overflow-x: hidden; line-height: 1.6; }
 
-     /* Centering headers */
     .section-header {
       display: flex;
       flex-direction: column;
@@ -52,8 +51,6 @@
       text-align: center;
     }
 
-
-    
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -82,27 +79,32 @@
     }
     .nav-cta:hover { opacity: 0.85; }
 
-    /* HERO */
+    /* HERO — full-bleed single panel */
     .hero {
-      min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
-      padding-top: 76px; position: relative;
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 76px;
+      overflow: hidden;
     }
-    .hero-left {
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 5rem 3.5rem 5rem 5rem;
-    }
-    .hero-right { position: relative; overflow: hidden; background: var(--blue); }
-    .hero-right-img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; opacity: 0.35; mix-blend-mode: luminosity;
-    }
-    .hero-right-overlay {
+    .hero-bg {
       position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(26,58,92,0.8) 0%, rgba(12,24,41,0.6) 100%);
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
-    .hero-right-content {
-      position: relative; z-index: 2; padding: 3rem;
-      display: flex; flex-direction: column; justify-content: flex-end; height: 100%;
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(12,24,41,0.78) 0%, rgba(26,58,92,0.65) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 4rem 2rem;
+      max-width: 760px;
     }
     .eyebrow {
       font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
@@ -110,16 +112,22 @@
       margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem;
     }
     .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--accent); }
+    .eyebrow::after  { content: ''; display: block; width: 28px; height: 1px; background: var(--accent); }
     h1 {
-      font-family: var(--serif); font-size: clamp(2.6rem, 4.5vw, 4.2rem);
-      line-height: 1.07; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.4rem;
+      font-family: var(--serif); font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+      line-height: 1.07; letter-spacing: -0.02em; color: #fff; margin-bottom: 1.4rem;
     }
     h1 em { font-style: italic; color: var(--accent); }
     .hero-desc {
-      font-size: 1rem; color: var(--muted); max-width: 400px;
-      margin-bottom: 2.25rem; line-height: 1.75; font-weight: 300;
+      font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 520px;
+      margin-bottom: 1rem; line-height: 1.75; font-weight: 300;
     }
-    .hero-actions { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+    .hero-venue-line {
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(255,255,255,0.45);
+      margin-bottom: 2.25rem;
+    }
+    .hero-actions { display: flex; gap: 0.875rem; flex-wrap: wrap; justify-content: center; }
     .btn-primary {
       display: inline-block; background: var(--accent); color: #fff;
       padding: 0.82rem 1.9rem; font-size: 0.88rem; font-weight: 500;
@@ -128,28 +136,18 @@
     }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
     .btn-secondary {
-      display: inline-block; border: 1px solid var(--ink); color: var(--ink);
+      display: inline-block; border: 1px solid rgba(255,255,255,0.5); color: #fff;
       padding: 0.82rem 1.9rem; font-size: 0.88rem; font-weight: 400;
       letter-spacing: 0.04em; text-decoration: none; border-radius: 2px;
       transition: background 0.2s, color 0.2s, transform 0.2s;
     }
-    .btn-secondary:hover { background: var(--ink); color: var(--paper); transform: translateY(-1px); }
-    .date-badge {
-      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: rgba(255,255,255,0.5);
-      margin-bottom: 1rem;
-    }
-    .hero-venue-title {
-      font-family: var(--serif); font-size: 1.6rem; color: #fff; margin-bottom: 0.4rem;
-    }
-    .hero-venue-sub {
-      font-size: 0.82rem; color: rgba(255,255,255,0.5); font-weight: 300;
-    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.12); transform: translateY(-1px); }
+
+    /* pulse rings decoration */
     .wave-rings {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-      width: 300px; height: 300px; z-index: 1; pointer-events: none;
+      width: 300px; height: 300px; z-index: 1; pointer-events: none; opacity: 0.4;
     }
-
     @keyframes pulse-ring {
       0%   { r: 40; opacity: 0.25; stroke-width: 1.5; }
       100% { r: 140; opacity: 0; stroke-width: 0.5; }
@@ -194,56 +192,23 @@
     /* LOCATIONS */
     .locations { background: var(--paper); }
     .venues { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 3rem; }
-    .venue-card { position: relative; overflow: hidden; border-radius: 2px; }
+    .venue-card {
+      display: flex; flex-direction: column;
+      border-radius: 2px; overflow: hidden; background: #fff;
+    }
     .venue-img {
       width: 100%; height: 340px; object-fit: cover;
       display: block; transition: transform 0.5s ease;
     }
     .venue-card:hover .venue-img { transform: scale(1.03); }
-    .venue-card {
-      display: flex;
-      flex-direction: column;
-      border-radius: 2px;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .venue-img {
-      width: 100%;
-      height: 340px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .venue-card:hover .venue-img {
-      transform: scale(1.03);
-    }
-
-    .venue-content {
-      padding: 1.5rem 2rem;
-      background: #fff;
-    }
+    .venue-content { padding: 1.5rem 2rem; background: #fff; }
     .venue-phase {
       font-family: var(--mono); font-size: 1rem; letter-spacing: 0.15em;
       text-transform: uppercase; color: rgba(200,50,10,0.9); margin-bottom: 0.5rem;
     }
     .venue-name { font-family: var(--serif); font-size: 1.7rem; color: var(--ink); margin-bottom: 0.25rem; }
-
-    .venue-dates {
-      font-family: var(--mono);
-      font-size: 1rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-    }
-
-    .venue-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 0.6rem;
-      font-weight: 300;
-      line-height: 1.6;
-    }
+    .venue-dates { font-family: var(--mono); font-size: 1rem; color: var(--muted); letter-spacing: 0.06em; }
+    .venue-desc { font-size: 0.9rem; color: var(--muted); margin-top: 0.6rem; font-weight: 300; line-height: 1.6; }
 
     /* REGISTRATION */
     .registration { background: var(--blue); }
@@ -252,8 +217,9 @@
     .reg-notice {
       background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
       border-radius: 2px; padding: 1rem 1.4rem; font-size: 0.88rem;
-      color: rgba(255,255,255,0.65); margin-bottom: 2.5rem; font-weight: 300;
+      color: rgba(255,255,255,0.65); margin: 0 auto 2.5rem auto; font-weight: 300;
       display: flex; align-items: flex-start; gap: 0.75rem;
+      max-width: 600px; text-align: center; justify-content: center;
     }
     .reg-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2.5rem; }
     .reg-card {
@@ -272,8 +238,10 @@
     .reg-price span { font-family: var(--mono); font-size: 0.85rem; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; }
     .reg-note { font-size: 1rem; color: rgba(255,255,255,0.4); font-weight: 300; line-height: 1.6; }
     .reg-payment {
-      font-size: 1.6rem; color: rgba(255,255,255,0.45); font-style: italic; margin-bottom: 2rem;
+      font-size: 1.1rem; color: rgba(255,255,255,0.45); font-style: italic;
+      margin-bottom: 2rem; text-align: center;
     }
+    .reg-cta-wrap { display: flex; justify-content: center; }
 
     /* SPEAKERS */
     .speakers { background: #fff; border-top: 1px solid var(--line); }
@@ -345,6 +313,22 @@
       font-style: italic; font-weight: 300; border-top: 1px solid var(--line);
     }
 
+    /* Programme PDF button */
+    .programme-header-row {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
+    }
+    .programme-header-row h2 { margin-bottom: 0; }
+    .btn-pdf {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--blue); color: #fff;
+      padding: 0.7rem 1.4rem; font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.04em; text-decoration: none; border-radius: 2px;
+      transition: opacity 0.2s, transform 0.2s; white-space: nowrap;
+    }
+    .btn-pdf:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn-pdf svg { width: 14px; height: 14px; flex-shrink: 0; }
+
     /* CONTACT */
     .contact { background: var(--ink); }
     .contact .section-label { color: rgba(200,50,10,0.7); }
@@ -382,17 +366,15 @@
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .hero-left > * { animation: fadeUp 0.65s ease both; }
-    .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
-    .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
-    .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
-    .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+    .hero-content > * { animation: fadeUp 0.65s ease both; }
+    .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
 
     /* RESPONSIVE */
     @media (max-width: 960px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { height: 280px; }
-      .hero-left { padding: 3.5rem 2rem 3rem; }
       .about-inner { grid-template-columns: 1fr; gap: 2rem; }
       .venues { grid-template-columns: 1fr; }
       .reg-cards { grid-template-columns: 1fr; }
@@ -401,6 +383,7 @@
       nav { padding: 0.875rem 1.5rem; }
       .nav-links { display: none; }
       footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 1.5rem 2rem; }
+      .programme-header-row { justify-content: center; text-align: center; }
     }
   </style>
 </head>
@@ -417,37 +400,31 @@
     <li><a href="#speakers">Speakers</a></li>
     <li><a href="#programme">Programme</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeBApqPFSI3DGjON96TjbXkqx_n5TnbZ6rfMO6frep_5qrQEg/viewform?usp=dialog" target="_blank" class="nav-cta">Register</a></li>
+    <li><a href="#registration" class="nav-cta">Register</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- HERO — full bleed -->
 <div class="hero">
-  <div class="hero-left">
+  <img class="hero-bg" src="assets/images/Crystal3.png" alt="High pressure crystal background">
+  <div class="hero-overlay"></div>
+  <svg class="wave-rings" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <circle class="ring" cx="150" cy="150" r="40" fill="none" stroke="rgba(200,50,10,0.7)" stroke-width="1.5"/>
+    <circle class="ring" cx="150" cy="150" r="40" fill="none" stroke="rgba(200,50,10,0.5)" stroke-width="1"/>
+    <circle class="ring" cx="150" cy="150" r="40" fill="none" stroke="rgba(200,50,10,0.3)" stroke-width="0.5"/>
+    <circle cx="150" cy="150" r="5" fill="#c8320a"/>
+    <circle cx="150" cy="150" r="2" fill="#fff"/>
+  </svg>
+  <div class="hero-content">
     <p class="eyebrow">Australia 2026</p>
     <h1>High Pressure<br><em>Research</em><br>Workshop</h1>
     <p class="hero-desc">
       Promoting national and international collaboration in high pressure research — bringing together researchers to discuss the latest trends and perspectives from 30 Nov to 06 Dec 2026 across Canberra &amp; Kioloa.
     </p>
+    <p class="hero-venue-line">30 Nov – 06 Dec 2026 &nbsp;·&nbsp; Australian National University &amp; Kioloa Coastal Campus</p>
     <div class="hero-actions">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBApqPFSI3DGjON96TjbXkqx_n5TnbZ6rfMO6frep_5qrQEg/viewform?usp=dialog" target="_blank" class="btn-primary">Register Now →</a>
+      <a href="#registration" class="btn-primary">Register Now →</a>
       <a href="#about" class="btn-secondary">Learn more</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <img class="hero-right-img" src="assets/images/Crystal3.png">
-    <div class="hero-right-overlay"></div>
-    <svg class="wave-rings" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-      <circle class="ring" cx="150" cy="150" r="40" fill="none" stroke="rgba(200,50,10,0.7)" stroke-width="1.5"/>
-      <circle class="ring" cx="150" cy="150" r="40" fill="none" stroke="rgba(200,50,10,0.5)" stroke-width="1"/>
-      <circle class="ring" cx="150" cy="150" r="40" fill="none" stroke="rgba(200,50,10,0.3)" stroke-width="0.5"/>
-      <circle cx="150" cy="150" r="5" fill="#c8320a"/>
-      <circle cx="150" cy="150" r="2" fill="#fff"/>
-    </svg>
-    <div class="hero-right-content">
-      <p class="date-badge">30 Nov – 06 Dec 2026</p>
-      <p class="hero-venue-title">Canberra &amp; Kioloa</p>
-      <p class="hero-venue-sub">Australian National University · Kioloa Coastal Campus</p>
     </div>
   </div>
 </div>
@@ -455,117 +432,56 @@
 <!-- ABOUT -->
 <section class="section about" id="about">
   <div class="about-inner">
-
-    <!-- LEFT COLUMN -->
     <div class="about-text">
       <div class="section-header">
         <p class="section-label">About the Workshop</p>
       </div>
-
       <h2>Advancing high pressure science in Australia</h2>
-
       <p>
         The High Pressure Research Workshop – Australia 2026 brings together an international community of researchers to share breakthroughs, develop collaborative networks, and explore the future of matter under extreme conditions.
       </p>
-
       <p>
         Spanning two unique venues — from Australia's bush capital Canberra to the immersive natural setting of Kioloa — this workshop offers a rare opportunity to combine rigorous scientific exchange with an inspiring Australian landscape.
       </p>
-
       <p>
         The programme features invited talks, poster sessions for students and early career researchers, and structured roundtable discussions designed to foster genuine collaboration across experiment, theory, and computation.
       </p>
-
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBApqPFSI3DGjON96TjbXkqx_n5TnbZ6rfMO6frep_5qrQEg/viewform?usp=dialog"
-         target="_blank"
-         class="btn-primary">
-        Register Now →
-      </a>
+      <a href="#registration" class="btn-primary">Register Now →</a>
     </div>
-
-    <!-- RIGHT COLUMN -->
-    <div style="
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:flex-start;
-      text-align:center;
-    ">
-
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;">
       <div class="section-header">
         <p class="section-label">Key Information</p>
       </div>
-
-      <div style="
-        display:flex;
-        flex-direction:column;
-        gap:1px;
-        max-width:520px;
-        width:100%;
-      ">
-
+      <div style="display:flex;flex-direction:column;gap:1px;max-width:520px;width:100%;">
         <div style="background:#fff;padding:1.25rem 1.5rem;border-radius:2px;">
-          <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">
-            Dates
-          </div>
-          <div style="font-weight:500;font-size:0.95rem;">
-            30 November – 06 December 2026
-          </div>
+          <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Dates</div>
+          <div style="font-weight:500;font-size:0.95rem;">30 November – 06 December 2026</div>
         </div>
-
         <div style="background:#fff;padding:1.25rem 1.5rem;border-radius:2px;">
-          <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">
-            Phase I Venue
-          </div>
-          <div style="font-weight:500;font-size:0.95rem;">
-            Australian National University, Canberra ACT
-          </div>
-          <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">
-            30 Nov – 04 Dec · Research School of Physics
-          </div>
+          <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Phase I Venue</div>
+          <div style="font-weight:500;font-size:0.95rem;">Australian National University, Canberra ACT</div>
+          <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">30 Nov – 04 Dec · Research School of Physics</div>
         </div>
-
         <div style="background:#fff;padding:1.25rem 1.5rem;border-radius:2px;">
-          <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">
-            Phase II Venue
-          </div>
-          <div style="font-weight:500;font-size:0.95rem;">
-            Kioloa Coastal Campus, New South Wales
-          </div>
-          <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">
-            04 Dec – 06 Dec · Immersive coastal bush setting
-          </div>
+          <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Phase II Venue</div>
+          <div style="font-weight:500;font-size:0.95rem;">Kioloa Coastal Campus, New South Wales</div>
+          <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">04 Dec – 06 Dec · Immersive coastal bush setting</div>
         </div>
-
         <div style="background:#fff;padding:1.25rem 1.5rem;border-radius:2px;">
-          <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">
-            Contact
-          </div>
+          <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Contact</div>
           <div style="font-weight:500;font-size:1.2rem;">
-            <a href="mailto:hprw2026@anu.edu.au"
-               style="color:var(--accent);text-decoration:none;">
-              hprw2026@anu.edu.au
-            </a>
+            <a href="mailto:hprw2026@anu.edu.au" style="color:var(--accent);text-decoration:none;">hprw2026@anu.edu.au</a>
           </div>
         </div>
-
         <div style="background:#fff;padding:1.25rem 1.5rem;border-radius:2px;">
-          <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">
-            Organised by
-          </div>
-          <div style="font-weight:500;font-size:0.95rem;">
-            Prof. Jodie Bradby &amp; Hendrik Heimes
-          </div>
-          <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">
-            Australian National University
-          </div>
+          <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Organised by</div>
+          <div style="font-weight:500;font-size:0.95rem;">Prof. Jodie Bradby &amp; Hendrik Heimes</div>
+          <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">Australian National University</div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- LOCATIONS -->
 <section class="section locations" id="locations">
@@ -599,7 +515,7 @@
 <section class="section registration" id="registration">
   <div class="section-header">
     <p class="section-label">Registration</p>
-  </div>  
+  </div>
   <h2>Secure your place</h2>
   <div class="reg-notice">
     <span>📌</span>
@@ -608,24 +524,23 @@
   <div class="reg-cards">
     <div class="reg-card">
       <p class="reg-card-location">Canberra · ANU</p>
-      
       <p class="reg-price">$100 <span>AUD</span></p>
       <p class="reg-note">Accommodation not included — participants book independently.</p>
     </div>
     <div class="reg-card">
       <p class="reg-card-location">Kioloa · Coastal</p>
-      
       <p class="reg-price">$300 <span>AUD</span></p>
       <p class="reg-note">Includes travel from Canberra, 2 nights accommodation, lunch &amp; dinner.</p>
     </div>
   </div>
   <p class="reg-payment">💳 Payment will be arranged after confirmation of your registration.</p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBApqPFSI3DGjON96TjbXkqx_n5TnbZ6rfMO6frep_5qrQEg/viewform?usp=dialog" target="_blank" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem;">Register Now →</a>
+  <div class="reg-cta-wrap">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBApqPFSI3DGjON96TjbXkqx_n5TnbZ6rfMO6frep_5qrQEg/viewform?usp=dialog" target="_blank" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem;">Register Now →</a>
+  </div>
 </section>
 
 <!-- SPEAKERS -->
 <section class="section speakers" id="speakers">
-
   <div class="section-header">
     <p class="section-label">Speakers</p>
     <h2>Invited speakers &amp; participants</h2>
@@ -633,63 +548,53 @@
       Our programme features leading researchers in high pressure science from institutions worldwide. Speaker confirmations are ongoing — check back for updates.
     </p>
   </div>
-
   <div class="speakers-grid">
     <div class="speaker-card">
       <div class="speaker-name">Dr. Elke Pahl</div>
       <div class="speaker-inst">Auckland University</div>
       <div class="speaker-role">Computational physics</div>
     </div>
-
     <div class="speaker-card">
       <div class="speaker-name">Dr. Helen Maynard-Casely</div>
       <div class="speaker-inst">ANSTO</div>
       <div class="speaker-role">Beamline scientist</div>
     </div>
-
     <div class="speaker-card">
       <div class="speaker-name">Prof. Nigel Marks</div>
       <div class="speaker-inst">Curtin University</div>
       <div class="speaker-role">Computational HP · MD simulations</div>
     </div>
-
     <div class="speaker-card">
       <div class="speaker-name">Dr. Emma Ehrenreich</div>
       <div class="speaker-inst">DESY</div>
       <div class="speaker-role">Beamline scientist</div>
     </div>
-
     <div class="speaker-card">
       <div class="speaker-name">Dr. Nico Giordano</div>
       <div class="speaker-inst">DESY</div>
       <div class="speaker-role">Beamline scientist</div>
     </div>
-
     <div class="speaker-card">
       <div class="speaker-name">Dr. Hanns-Peter Liermann</div>
       <div class="speaker-inst">DESY</div>
       <div class="speaker-role">Beamline scientist</div>
     </div>
-
     <div class="speaker-card">
       <div class="speaker-name">Dr. Bianca Haberl</div>
       <div class="speaker-inst">ORNL</div>
       <div class="speaker-role">Beamline scientist</div>
     </div>
-
     <div class="speaker-card">
       <div class="speaker-name">Prof. Reinhard Boehler</div>
       <div class="speaker-inst">ORNL (former)</div>
       <div class="speaker-role">Diamond anvil cell</div>
     </div>
-
     <div class="speaker-card">
       <div class="speaker-name">Prof. Dougal McCulloch</div>
       <div class="speaker-inst">RMIT University</div>
       <div class="speaker-role">Nanostructural analysis · TEM</div>
     </div>
   </div>
-
 </section>
 
 <!-- PROGRAMME -->
@@ -697,7 +602,18 @@
   <div class="section-header">
     <p class="section-label">Programme</p>
   </div>
-  <h2>Workshop schedule</h2>
+  <div class="programme-header-row">
+    <h2 style="margin-bottom:0;">Workshop schedule</h2>
+    <a href="assets/schedule.pdf" target="_blank" class="btn-pdf">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="12" y1="18" x2="12" y2="12"/>
+        <line x1="9" y1="15" x2="15" y2="15"/>
+      </svg>
+      Download Schedule (PDF)
+    </a>
+  </div>
   <div class="schedule-tabs">
     <button class="tab-btn active" onclick="showDay(0)">Mon 30 Nov</button>
     <button class="tab-btn" onclick="showDay(1)">Tue 01 Dec</button>
@@ -726,15 +642,11 @@
       </div>
       <div class="schedule-event">
         <span class="event-type type-session">Session A</span>
-        <div>
-          <div class="event-title">Focus Session A: Nonhydrostatic Effects in High Pressure</div>
-        </div>
+        <div><div class="event-title">Focus Session A: Nonhydrostatic Effects in High Pressure</div></div>
       </div>
       <div class="schedule-event">
         <span class="event-type type-talk">Talk</span>
-        <div>
-          <div class="event-title">Stress Gradients and Deviatoric Stress: What Are We Really Measuring?</div>
-        </div>
+        <div><div class="event-title">Stress Gradients and Deviatoric Stress: What Are We Really Measuring?</div></div>
       </div>
       <div class="schedule-event">
         <span class="event-type type-talk">Talk</span>
@@ -746,9 +658,7 @@
       </div>
       <div class="schedule-event">
         <span class="event-type type-session">Session B</span>
-        <div>
-          <div class="event-title">Focus Session B: Computational HP Science — Molecular Dynamics</div>
-        </div>
+        <div><div class="event-title">Focus Session B: Computational HP Science — Molecular Dynamics</div></div>
       </div>
       <div class="schedule-event">
         <span class="event-type type-talk">Talk</span>
@@ -763,9 +673,7 @@
       </div>
       <div class="schedule-event">
         <span class="event-type type-session">Session C</span>
-        <div>
-          <div class="event-title">Focus Session C: Computational HP Science — DFT</div>
-        </div>
+        <div><div class="event-title">Focus Session C: Computational HP Science — DFT</div></div>
       </div>
       <div class="schedule-event">
         <span class="event-type type-talk">Talk</span>
@@ -891,7 +799,7 @@
 <section class="section contact" id="contact">
   <div class="section-header">
     <p class="section-label">Contact</p>
-  </div>  
+  </div>
   <h2>Get in touch</h2>
   <div class="contact-grid">
     <div class="contact-item">
