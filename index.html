@@ -221,10 +221,20 @@
       display: flex; align-items: flex-start; gap: 0.75rem;
       max-width: 600px; text-align: center; justify-content: center;
     }
-    .reg-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2.5rem; }
+
+    /* ── Registration cards: narrower, centred ── */
+    .reg-cards {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
     .reg-card {
       background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
       border-radius: 2px; padding: 2.25rem;
+      width: 260px;
+      flex-shrink: 0;
     }
     .reg-card-location {
       font-family: var(--mono); font-size: 1.2rem; letter-spacing: 0.15em;
@@ -249,13 +259,20 @@
       font-size: 0.95rem; color: var(--muted); font-weight: 300;
       margin-bottom: 2.5rem; max-width: 560px; line-height: 1.75;
     }
+
+    /* ── Speakers: fixed 3-column grid ── */
     .speakers-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1px; border: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      max-width: 860px;
+      margin: 0 auto;
     }
     .speaker-card {
       padding: 1.5rem; border-right: 1px solid var(--line);
       transition: background 0.2s;
+      text-align: center;
     }
     .speaker-card:hover { background: rgba(26,58,92,0.03); }
     .speaker-name { font-weight: 500; font-size: 0.92rem; color: var(--ink); margin-bottom: 0.2rem; }
@@ -313,10 +330,13 @@
       font-style: italic; font-weight: 300; border-top: 1px solid var(--line);
     }
 
-    /* Programme PDF button */
+    /* ── Programme header: centred layout ── */
     .programme-header-row {
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 0.75rem;
     }
     .programme-header-row h2 { margin-bottom: 0; }
     .btn-pdf {
@@ -328,6 +348,14 @@
     }
     .btn-pdf:hover { opacity: 0.85; transform: translateY(-1px); }
     .btn-pdf svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .programme-disclaimer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted-light);
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+    }
 
     /* CONTACT */
     .contact { background: var(--ink); }
@@ -342,6 +370,8 @@
     .contact-val { font-size: 0.92rem; color: rgba(255,255,255,0.7); font-weight: 300; }
     .contact-val a { color: rgba(200,50,10,0.85); text-decoration: none; }
     .contact-val a:hover { color: #e8501e; }
+
+    /* ── Organiser box: 2 centred cards ── */
     .organiser-box {
       margin-top: 3rem; padding: 2rem; border: 1px solid rgba(255,255,255,0.1);
       border-radius: 2px;
@@ -349,8 +379,22 @@
     .organiser-label {
       font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
       text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem;
+      text-align: center;
     }
-    .organisers { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .organisers {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .organiser-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+      padding: 1.5rem 2.5rem;
+      text-align: center;
+      min-width: 200px;
+    }
     .organiser-name { font-size: 0.92rem; font-weight: 500; color: rgba(255,255,255,0.75); }
     .organiser-inst { font-size: 0.78rem; color: rgba(255,255,255,0.35); font-weight: 300; margin-top: 0.15rem; }
 
@@ -377,13 +421,17 @@
     @media (max-width: 960px) {
       .about-inner { grid-template-columns: 1fr; gap: 2rem; }
       .venues { grid-template-columns: 1fr; }
-      .reg-cards { grid-template-columns: 1fr; }
+      .reg-cards { flex-direction: column; align-items: center; }
       .contact-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
       .section { padding: 4rem 2rem; }
       nav { padding: 0.875rem 1.5rem; }
       .nav-links { display: none; }
       footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 1.5rem 2rem; }
-      .programme-header-row { justify-content: center; text-align: center; }
+      .speakers-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .speakers-grid { grid-template-columns: 1fr; }
+      .organisers { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -603,7 +651,7 @@
     <p class="section-label">Programme</p>
   </div>
   <div class="programme-header-row">
-    <h2 style="margin-bottom:0;">Workshop schedule</h2>
+    <h2>Workshop schedule</h2>
     <a href="assets/schedule.pdf" target="_blank" class="btn-pdf">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -614,7 +662,8 @@
       Download Schedule (PDF)
     </a>
   </div>
-  
+  <p class="programme-disclaimer">Programme is indicative and subject to change. Final schedule will be announced closer to the event.</p>
+</section>
 
 <!-- CONTACT -->
 <section class="section contact" id="contact">
@@ -639,11 +688,11 @@
   <div class="organiser-box">
     <p class="organiser-label">Organising Committee</p>
     <div class="organisers">
-      <div>
+      <div class="organiser-card">
         <div class="organiser-name">Prof. Jodie Bradby</div>
         <div class="organiser-inst">Australian National University</div>
       </div>
-      <div>
+      <div class="organiser-card">
         <div class="organiser-name">Hendrik Heimes</div>
         <div class="organiser-inst">Australian National University</div>
       </div>
