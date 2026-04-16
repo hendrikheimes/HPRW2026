@@ -36,6 +36,12 @@
     html { scroll-behavior: smooth; }
     body { font-family: var(--sans); background: var(--paper); color: var(--ink); overflow-x: hidden; line-height: 1.6; }
 
+
+    .center-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    
     .section-header {
       display: flex;
       flex-direction: column;
@@ -495,7 +501,9 @@
       <p>
         The programme features invited talks, poster sessions for students and early career researchers, and structured roundtable discussions designed to foster genuine collaboration across experiment, theory, and computation.
       </p>
-      <a href="#registration" class="btn-primary">Register Now →</a>
+      <div class="center-wrap">
+        <a href="#registration" class="btn-primary">Register Now →</a>
+      </div>
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;">
       <div class="section-header">
