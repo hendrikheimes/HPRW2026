@@ -9,6 +9,12 @@
   <meta property="og:title" content="High Pressure Research Workshop – Australia 2026">
   <meta property="og:description" content="30 Nov – 06 Dec 2026 · Canberra & Kioloa. International workshop in high pressure research science.">
   <meta property="og:type" content="website">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    img-src 'self' data:;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src https://fonts.gstatic.com;
+  ">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -440,7 +446,7 @@
 
 <nav>
   <a href="#" class="nav-logo">
-    <img src="assets/images/HPRW2026-logo.png">
+    <img src="assets/images/HPRW2026-logo.png" alt="HPRW 2026 logo">
     <span class="nav-logo-text">High Pressure<br>Workshop · AU 2026</span>
   </a>
   <ul class="nav-links">
@@ -584,7 +590,13 @@
   </div>
   <p class="reg-payment">💳 Payment will be arranged after confirmation of your registration.</p>
   <div class="reg-cta-wrap">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBApqPFSI3DGjON96TjbXkqx_n5TnbZ6rfMO6frep_5qrQEg/viewform?usp=dialog" target="_blank" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem;">Register Now →</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBApqPFSI3DGjON96TjbXkqx_n5TnbZ6rfMO6frep_5qrQEg/viewform?usp=dialog"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn-primary"
+       style="font-size:1rem;padding:1rem 2.5rem;">
+       Register Now →
+    </a>
   </div>
 </section>
 
