@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>High Pressure Research Workshop – Australia 2026</title>
-  <meta name="description" content="16 – 21 Nov 2026 · Canberra &amp; Kioloa. An international workshop bringing together researchers in high pressure science at ANU and Kioloa Coastal Campus.">
+  <meta name="description" content="16–21 Nov 2026 · Canberra & Kioloa. The gathering of Australia's high pressure research community, hosted at ANU.">
   <meta name="keywords" content="high pressure research, workshop, Australia 2026, ANU, Canberra, Kioloa, geophysics, materials science, diamond anvil cell, synchrotron">
   <meta property="og:title" content="High Pressure Research Workshop – Australia 2026">
-  <meta property="og:description" content="16 – 21 Nov 2026 · Canberra & Kioloa. International workshop in high pressure research science.">
+  <meta property="og:description" content="16–21 Nov 2026 · Canberra & Kioloa. The gathering of Australia's high pressure research community, hosted at ANU.">
   <meta property="og:type" content="website">
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
@@ -35,7 +35,6 @@
     }
     html { scroll-behavior: smooth; }
     body { font-family: var(--sans); background: var(--paper); color: var(--ink); overflow-x: hidden; line-height: 1.6; }
-
 
     .center-wrap {
       display: flex;
@@ -117,7 +116,7 @@
       display: flex; flex-direction: column;
       align-items: center; text-align: center;
       padding: 4rem 2rem;
-      max-width: 760px;
+      max-width: 800px;
     }
     .eyebrow {
       font-family: var(--mono); font-size: 1.4rem; font-weight: 800;
@@ -127,12 +126,12 @@
     .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--accent); }
     .eyebrow::after  { content: ''; display: block; width: 28px; height: 1px; background: var(--accent); }
     h1 {
-      font-family: var(--serif); font-size: clamp(2.8rem, 5.5vw, 4.8rem);
-      line-height: 1.07; letter-spacing: -0.02em; color: #fff; margin-bottom: 1.4rem;
+      font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 1.4rem;
     }
     h1 em { font-style: italic; color: var(--accent); }
     .hero-desc {
-      font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 520px;
+      font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 580px;
       margin-bottom: 1rem; line-height: 1.75; font-weight: 300;
     }
     .hero-venue-line {
@@ -202,6 +201,58 @@
     }
     .about-text p:last-of-type { margin-bottom: 1.8rem; }
 
+    /* TRAINING DAY */
+    .training { background: var(--ink); }
+    .training .section-label { color: rgba(200,50,10,0.85); }
+    .training h2 { color: #fff; }
+    .training-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 2.5rem;
+    }
+    .training-text p {
+      font-size: 0.97rem; color: rgba(255,255,255,0.65);
+      margin-bottom: 1.1rem; font-weight: 300; line-height: 1.8;
+    }
+    .training-text p strong {
+      color: rgba(255,255,255,0.85); font-weight: 500;
+    }
+    .training-cta-note {
+      font-size: 0.97rem; color: rgba(255,255,255,0.85);
+      font-weight: 500; line-height: 1.75;
+      border-left: 2px solid var(--accent);
+      padding-left: 1.1rem;
+      margin-top: 1.5rem;
+    }
+    .training-details {
+      display: flex; flex-direction: column; gap: 1px;
+    }
+    .training-detail-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+      padding: 1.25rem 1.5rem;
+    }
+    .training-detail-label {
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(200,50,10,0.85); margin-bottom: 0.35rem;
+    }
+    .training-detail-val {
+      font-size: 0.95rem; color: rgba(255,255,255,0.75); font-weight: 400;
+    }
+    .training-topics {
+      margin-top: 0.5rem;
+      display: flex; flex-direction: column; gap: 0.4rem;
+    }
+    .training-topic {
+      display: flex; align-items: flex-start; gap: 0.6rem;
+      font-size: 0.88rem; color: rgba(255,255,255,0.6); font-weight: 300;
+    }
+    .training-topic::before {
+      content: '—'; color: var(--accent); flex-shrink: 0; margin-top: 0.05em;
+    }
+
     /* LOCATIONS */
     .locations { background: var(--paper); }
     .venues { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 3rem; }
@@ -235,7 +286,6 @@
       max-width: 600px; text-align: center; justify-content: center;
     }
 
-    /* ── Registration cards: narrower, centred ── */
     .reg-cards {
       display: flex;
       justify-content: center;
@@ -273,7 +323,6 @@
       margin-bottom: 2.5rem; max-width: 560px; line-height: 1.75;
     }
 
-    /* ── Speakers: fixed 3-column grid ── */
     .speakers-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -343,7 +392,6 @@
       font-style: italic; font-weight: 300; border-top: 1px solid var(--line);
     }
 
-    /* ── Programme header: centred layout ── */
     .programme-header-row {
       display: flex;
       flex-direction: column;
@@ -384,7 +432,6 @@
     .contact-val a { color: rgba(200,50,10,0.85); text-decoration: none; }
     .contact-val a:hover { color: #e8501e; }
 
-    /* ── Organiser box: 2 centred cards ── */
     .organiser-box {
       margin-top: 3rem; padding: 2rem; border: 1px solid rgba(255,255,255,0.1);
       border-radius: 2px;
@@ -441,6 +488,7 @@
       .nav-links { display: none; }
       footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 1.5rem 2rem; }
       .speakers-grid { grid-template-columns: repeat(2, 1fr); }
+      .training-inner { grid-template-columns: 1fr; gap: 2rem; }
     }
     @media (max-width: 600px) {
       .speakers-grid { grid-template-columns: 1fr; }
@@ -457,6 +505,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#training">Training Day</a></li>
     <li><a href="#locations">Locations</a></li>
     <li><a href="#speakers">Speakers</a></li>
     <li><a href="#programme">Programme</a></li>
@@ -472,9 +521,9 @@
   
   <div class="hero-content">
     <p class="eyebrow">Australia 2026</p>
-    <h1>High Pressure<br><em>Research</em><br>Workshop</h1>
+    <h1>The gathering place for <em>Australia's</em> high pressure community.</h1>
     <p class="hero-desc">
-      Promoting national and international collaboration in high pressure research — bringing together researchers to discuss the latest trends and perspectives from 16 to 21 Nov 2026 across Canberra &amp; Kioloa.
+      Australia's high pressure research community spans physics, materials science, Earth science, and chemistry — but has few opportunities to connect across those boundaries. HPRW 2026 is designed to bring Australian researchers together, build lasting connections, and begin coordinating the resources and expertise that exist across our institutions.
     </p>
     <p class="hero-venue-line">16 – 21 Nov 2026 &nbsp;·&nbsp; Australian National University &amp; Kioloa Coastal Campus</p>
     <div class="hero-actions">
@@ -491,15 +540,15 @@
       <div class="section-header">
         <p class="section-label">About the Workshop</p>
       </div>
-      <h2>Advancing high pressure science in Australia</h2>
+      <h2>Building Australia's high pressure research community</h2>
       <p>
-        The High Pressure Research Workshop – Australia 2026 brings together an international community of researchers to share breakthroughs, develop collaborative networks, and explore the future of matter under extreme conditions.
+        Australia has world-class high pressure researchers and, now, world-class high pressure infrastructure. What it lacks is a connected community. HPRW 2026 is a deliberate attempt to build one.
       </p>
       <p>
-        Spanning two unique venues — from Australia's bush capital Canberra to the immersive natural setting of Kioloa — this workshop offers a rare opportunity to combine rigorous scientific exchange with an inspiring Australian landscape.
+        The workshop brings together researchers from across the disciplines that touch high pressure science, alongside international invited speakers, for five days of talks, poster sessions, and structured discussion. The goal is not just scientific exchange but the beginning of something more sustained: shared networks, coordinated resources, and the foundation for future collaborative equipment bids.
       </p>
       <p>
-        The programme features invited talks, poster sessions for students and early career researchers, and structured roundtable discussions designed to foster genuine collaboration across experiment, theory, and computation.
+        Students and early career researchers are central to this, not an afterthought. A dedicated one-day hands-on training session covers practical diamond anvil cell techniques, global facilities, and how to apply for beamtime at major synchrotron and neutron sources. Places are limited to 10–12 participants and are included in the registration fee.
       </p>
       <div class="center-wrap">
         <a href="#registration" class="btn-primary">Register Now →</a>
@@ -510,30 +559,78 @@
         <p class="section-label">Key Information</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:1px;max-width:520px;width:100%;">
-        <div style="background:#fff;padding:1.25rem 1.5rem;border-radius:2px;">
+        <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
           <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Dates</div>
           <div style="font-weight:500;font-size:1rem;">16 – 21 November 2026</div>
         </div>
-        <div style="background:#fff;padding:1.25rem 1.5rem;border-radius:2px;">
+        <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
           <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Phase I Venue</div>
           <div style="font-weight:500;font-size:1rem;">Australian National University, Canberra ACT</div>
           <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">16 – 19 Nov · Research School of Physics</div>
         </div>
-        <div style="background:#fff;padding:1.25rem 1.5rem;border-radius:2px;">
+        <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
           <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Phase II Venue</div>
           <div style="font-weight:500;font-size:1rem;">Kioloa Coastal Campus, New South Wales</div>
           <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">19 – 21 Nov · Immersive coastal bush setting</div>
         </div>
-        <div style="background:#fff;padding:1.25rem 1.5rem;border-radius:2px;">
+        <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
           <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Contact</div>
           <div style="font-weight:500;font-size:1.2rem;">
             <a href="mailto:hprw@anu.edu.au" style="color:var(--accent);text-decoration:none;">hprw@anu.edu.au</a>
           </div>
         </div>
-        <div style="background:#fff;padding:1.25rem 1.5rem;border-radius:2px;">
+        <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
           <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Organised by</div>
           <div style="font-weight:500;font-size:1rem;">Prof. Jodie Bradby &amp; Hendrik Heimes</div>
           <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">Australian National University</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING DAY -->
+<section class="section training" id="training">
+  <div class="section-header">
+    <p class="section-label">Hands-On Training · Open to Students &amp; ECRs</p>
+  </div>
+  <h2>One-day training session</h2>
+  <div class="training-inner">
+    <div class="training-text">
+      <p>
+        A dedicated one-day training session runs alongside the main programme and is <strong>included in the ANU registration fee</strong>. Capped at 10–12 participants, it offers practical, small-group instruction from experienced researchers.
+      </p>
+      <p>
+        The session covers the fundamentals of diamond anvil cell techniques, a guided overview of major international high pressure facilities, and how to navigate beamtime applications at synchrotron and neutron sources — the kind of practical knowledge that typically takes years to accumulate informally.
+      </p>
+      <p class="training-cta-note">
+        If you are a student or early career researcher, this is worth registering for on its own merits. Secure your place early — numbers are strictly limited.
+      </p>
+      <div style="margin-top:2rem;">
+        <a href="#registration" class="btn-primary">Register to secure your place →</a>
+      </div>
+    </div>
+    <div class="training-details">
+      <div class="training-detail-item">
+        <div class="training-detail-label">Format</div>
+        <div class="training-detail-val">One full day, small group (max 10–12 participants)</div>
+      </div>
+      <div class="training-detail-item">
+        <div class="training-detail-label">Included in</div>
+        <div class="training-detail-val">ANU / Canberra registration — no additional cost</div>
+      </div>
+      <div class="training-detail-item">
+        <div class="training-detail-label">Open to</div>
+        <div class="training-detail-val">PhD students and early career researchers</div>
+      </div>
+      <div class="training-detail-item">
+        <div class="training-detail-label">Topics covered</div>
+        <div class="training-detail-val">
+          <div class="training-topics">
+            <div class="training-topic">Practical diamond anvil cell techniques</div>
+            <div class="training-topic">Overview of major international high pressure facilities</div>
+            <div class="training-topic">Beamtime applications at synchrotron &amp; neutron sources</div>
+          </div>
         </div>
       </div>
     </div>
@@ -544,11 +641,10 @@
 <section class="section locations" id="locations">
   <div class="section-header">
     <p class="section-label">Locations</p>
-  
-  
+  </div>
   <div class="venues">
     <div class="venue-card">
-      <img class="venue-img" src="assets/images/ANU-venue.jpg">
+      <img class="venue-img" src="assets/images/ANU-venue.jpg" alt="Australian National University, Canberra">
       <div class="venue-content">
         <p class="venue-phase">Phase I · 16 – 19 Nov</p>
         <p class="venue-name">Australian National University</p>
@@ -557,7 +653,7 @@
       </div>
     </div>
     <div class="venue-card">
-      <img class="venue-img" src="assets/images/Kioloa-venue.jpg">
+      <img class="venue-img" src="assets/images/Kioloa-venue.jpg" alt="Kioloa Coastal Campus, New South Wales">
       <div class="venue-content">
         <p class="venue-phase">Phase II · 19 – 21 Nov</p>
         <p class="venue-name">Kioloa Coastal Campus</p>
@@ -586,7 +682,7 @@
     <div class="reg-card">
       <p class="reg-card-location">Canberra · ANU</p>
       <p class="reg-price">$150 <span>AUD</span></p>
-      <p class="reg-note">Fee includes lunch, morning- and afternoon tea. Accommodation not included — participants book independently.</p>
+      <p class="reg-note">Fee includes lunch, morning- and afternoon tea, and the hands-on training day for students and ECRs. Accommodation not included — participants book independently.</p>
     </div>
     <div class="reg-card">
       <p class="reg-card-location">Kioloa · Coastal</p>
@@ -626,9 +722,8 @@
     <div class="speaker-card">
       <div class="speaker-name">Dr. Helen Maynard-Casely</div>
       <div class="speaker-inst">ANSTO</div>
-      <div class="speaker-role">Planetary Science · Science Communication </div>
+      <div class="speaker-role">Planetary Science · Science Communication</div>
     </div>
-   
     
     <div class="speaker-card">
       <div class="speaker-name">Prof. Nigel Marks</div>
@@ -636,35 +731,32 @@
       <div class="speaker-role">Computational Physics · Molecular Dynamics Simulations</div>
     </div>
     
-    
     <div class="speaker-card">
       <div class="speaker-name">Dr. Emma Ehrenreich-Petersen</div>
       <div class="speaker-inst">DESY</div>
       <div class="speaker-role">Time-resolved X-ray Phase Contrast Imaging · X-ray Diffraction · Materials Science · Phase Transitions</div>
     </div>
     
-    
     <div class="speaker-card">
       <div class="speaker-name">Dr. Nico Giordano</div>
       <div class="speaker-inst">DESY</div>
       <div class="speaker-role">Single-crystal X-ray Diffraction · Organic Molecules · Phase Transitions · Laser Heating</div>
     </div>
-   
     
     <div class="speaker-card">
       <div class="speaker-name">Dr. Hanns-Peter Liermann</div>
       <div class="speaker-inst">DESY</div>
-      <div class="speaker-role">Time-resolved X-ray Phase Contrast Imaging · Advanced DAC Techniques · Earth & Materials Science · Beamline Design</div>
+      <div class="speaker-role">Time-resolved X-ray Phase Contrast Imaging · Advanced DAC Techniques · Earth &amp; Materials Science · Beamline Design</div>
     </div>
     
     <div class="speaker-card">
       <div class="speaker-name">Dr. Bianca Haberl</div>
       <div class="speaker-inst">ANU</div>
-      <div class="speaker-role">Metastable Group IVa Materials · High Pressure Neutron Scattering </div>
+      <div class="speaker-role">Metastable Group IVa Materials · High Pressure Neutron Scattering</div>
     </div>
     <div class="speaker-card">
       <div class="speaker-name">Prof. Reinhard Boehler</div>
-      <div class="speaker-inst">University of Tennessee, Knoxville <br> HP-Tech</div>
+      <div class="speaker-inst">University of Tennessee, Knoxville · HP-Tech</div>
       <div class="speaker-role">Geophysics · Advanced Diamond Cell Techniques</div>
     </div>
     <div class="speaker-card">
@@ -672,7 +764,6 @@
       <div class="speaker-inst">RMIT University</div>
       <div class="speaker-role">Carbon and Related Materials · Electron Microscopy</div>
     </div>
-  
   </div>
 </section>
 
@@ -693,7 +784,7 @@
       Download Schedule (PDF)
     </a>
   </div>
-  <p class="programme-disclaimer">Programme is indicative and subject to change. Final schedule will be announced closer to the event.</p>
+  <p class="programme-disclaimer">Programme is indicative and subject to change. The training day and the Kioloa component will be clearly identified as distinct programme elements when the full schedule is released. Final schedule will be announced closer to the event.</p>
 </section>
 
 <!-- CONTACT -->
