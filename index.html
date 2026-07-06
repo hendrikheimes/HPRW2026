@@ -286,6 +286,28 @@
       max-width: 600px; text-align: center; justify-content: center;
     }
 
+    .reg-deadlines {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 0 auto 2.5rem auto;
+      max-width: 700px;
+    }
+    .reg-deadline-item {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 2px; padding: 1rem 1.5rem;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      min-width: 220px;
+    }
+    .reg-deadline-label {
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(200,50,10,0.85); margin-bottom: 0.35rem;
+    }
+    .reg-deadline-date {
+      font-family: var(--serif); font-size: 1.3rem; color: #fff;
+    }
+
     .reg-cards {
       display: flex;
       justify-content: center;
@@ -458,6 +480,23 @@
     .organiser-name { font-size: 0.92rem; font-weight: 500; color: rgba(255,255,255,0.75); }
     .organiser-inst { font-size: 0.78rem; color: rgba(255,255,255,0.35); font-weight: 300; margin-top: 0.15rem; }
 
+    /* SUPPORTERS */
+    .supporters { background: #fff; border-top: 1px solid var(--line); }
+    .supporters-inner {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      gap: 1.5rem;
+    }
+    .supporters-text {
+      font-size: 0.92rem; color: var(--muted); font-weight: 300;
+    }
+    .supporters-logos {
+      display: flex; align-items: center; justify-content: center;
+      gap: 2.5rem; flex-wrap: wrap;
+    }
+    .supporters-logos img {
+      max-height: 70px; width: auto; object-fit: contain;
+    }
+
     /* FOOTER */
     footer {
       background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06);
@@ -574,6 +613,14 @@
           <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">19 – 21 Nov · Immersive coastal bush setting</div>
         </div>
         <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
+          <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Abstract Submission Deadline</div>
+          <div style="font-weight:500;font-size:1rem;">31 August 2026</div>
+        </div>
+        <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
+          <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Registration Deadline</div>
+          <div style="font-weight:500;font-size:1rem;">30 September 2026</div>
+        </div>
+        <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
           <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Contact</div>
           <div style="font-weight:500;font-size:1.2rem;">
             <a href="mailto:hprw@anu.edu.au" style="color:var(--accent);text-decoration:none;">hprw@anu.edu.au</a>
@@ -670,6 +717,16 @@
     <p class="section-label">Registration</p>
   </div>
   <h2>Secure your place</h2>
+  <div class="reg-deadlines">
+    <div class="reg-deadline-item">
+      <span class="reg-deadline-label">Abstract Submission Deadline</span>
+      <span class="reg-deadline-date">31 August 2026</span>
+    </div>
+    <div class="reg-deadline-item">
+      <span class="reg-deadline-label">Registration Deadline</span>
+      <span class="reg-deadline-date">30 September 2026</span>
+    </div>
+  </div>
   <div class="reg-notice">
     <span>📌</span>
     <span>Students and early career researchers are strongly encouraged to bring a poster for presentation during the dedicated poster sessions.</span>
@@ -819,6 +876,17 @@
         <div class="organiser-inst">Australian National University</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SUPPORTERS -->
+<section class="section supporters" id="supporters">
+  <div class="supporters-inner">
+    <p class="section-label">Supported By</p>
+    <div class="supporters-logos">
+      <img src="assets/images/DAAD.png" alt="Deutscher Akademischer Austausch Dienst (DAAD) logo">
+    </div>
+    <p class="supporters-text">Supported by Deutscher Akademischer Austausch Dienst (DAAD)</p>
   </div>
 </section>
 
