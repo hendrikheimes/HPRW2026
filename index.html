@@ -476,6 +476,18 @@
       padding: 1.5rem 2.5rem;
       text-align: center;
       min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .organiser-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
     }
     .organiser-name { font-size: 0.92rem; font-weight: 500; color: rgba(255,255,255,0.75); }
     .organiser-inst { font-size: 0.78rem; color: rgba(255,255,255,0.35); font-weight: 300; margin-top: 0.15rem; }
@@ -615,12 +627,6 @@
           <div style="font-weight:500;font-size:1rem;">Kioloa Coastal Campus, New South Wales</div>
           <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">19 – 21 Nov · Immersive coastal bush setting</div>
         </div>
-        <!--
-        <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
-          <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Abstract Submission Deadline</div>
-          <div style="font-weight:500;font-size:1rem;">31 August 2026</div>
-        </div>
-        -->
         <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
           <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Registration Deadline</div>
           <div style="font-weight:500;font-size:1rem;">30 September 2026</div>
@@ -723,35 +729,12 @@
   </div>
   <h2>Secure your place</h2>
   <div class="reg-deadlines">
-    <!-- 
-    <div class="reg-deadline-item">
-      <span class="reg-deadline-label">Abstract Submission Deadline</span>
-      <span class="reg-deadline-date">31 August 2026</span>
-    </div> 
-    -->
-    
     <div class="reg-deadline-item">
       <span class="reg-deadline-label">Registration Deadline</span>
       <span class="reg-deadline-date">30 September 2026</span>
     </div>
   </div>
   <div class="reg-cta-wrap" style="gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;">
-    <!--
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScgj8mitnPgH3NMoEWAW5L_ZMPUQuoz82AwDWM4E0AK11Mqnw/viewform?usp=publish-editor"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="btn-primary"
-       style="font-size:0.95rem;padding:0.9rem 2rem;">
-       Submit Abstract →
-    </a>
-    -->
-    <!--
-    <a href="assets/HPRW2026_Abstract_Template.docx"
-       class="btn-secondary"
-       style="font-size:0.95rem;padding:0.9rem 2rem;">
-       Download Abstract Template
-    </a>
-    -->
   </div>
   <div class="reg-notice">
     <span>📌</span>
@@ -890,18 +873,22 @@
     <p class="organiser-label">Organising Committee</p>
     <div class="organisers">
       <div class="organiser-card">
+        <img class="organiser-photo" src="assets/images/JB.png" alt="Prof. Jodie Bradby">
         <div class="organiser-name">Prof. Jodie Bradby</div>
         <div class="organiser-inst">Australian National University</div>
       </div>
       <div class="organiser-card">
+        <img class="organiser-photo" src="assets/images/HH.png" alt="Dr. Hendrik Heimes">
         <div class="organiser-name">Dr. Hendrik Heimes</div>
         <div class="organiser-inst">Australian National University</div>
       </div>
       <div class="organiser-card">
+        <img class="organiser-photo" src="assets/images/DGM.png" alt="Prof. Dougal McCulloch">
         <div class="organiser-name">Prof. Dougal McCulloch</div>
         <div class="organiser-inst">RMIT University</div>
       </div>
       <div class="organiser-card">
+        <img class="organiser-photo" src="assets/images/SC.png" alt="Samuel Case">
         <div class="organiser-name">Samuel Case</div>
         <div class="organiser-inst">Australian National University</div>
       </div>
@@ -910,14 +897,17 @@
         <div class="organiser-inst">Australian National University</div>
       </div>
       <div class="organiser-card">
+        <img class="organiser-photo" src="assets/images/XH.png" alt="Dr. Xingshuo Huang">
         <div class="organiser-name">Dr. Xingshuo Huang</div>
         <div class="organiser-inst">Australian National University</div>
       </div>
       <div class="organiser-card">
+        <img class="organiser-photo" src="assets/images/AT.png" alt="Aqsa Tehseen">
         <div class="organiser-name">Aqsa Tehseen</div>
         <div class="organiser-inst">Australian National University</div>
       </div>
       <div class="organiser-card">
+        <img class="organiser-photo" src="assets/images/IV.png" alt="Ines Vaz">
         <div class="organiser-name">Ines Vaz</div>
         <div class="organiser-inst">RMIT University</div>
       </div>
