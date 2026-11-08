@@ -84,12 +84,6 @@
       text-decoration: none; transition: color 0.2s; letter-spacing: 0.02em;
     }
     .nav-links a:hover { color: var(--ink); }
-    .nav-cta {
-      background: var(--accent); color: #fff !important;
-      padding: 0.5rem 1.25rem; border-radius: 2px;
-      font-weight: 500 !important; transition: opacity 0.2s !important;
-    }
-    .nav-cta:hover { opacity: 0.85; }
 
     /* HERO — full-bleed single panel */
     .hero {
@@ -273,70 +267,6 @@
     .venue-name { font-family: var(--serif); font-size: 1.7rem; color: var(--ink); margin-bottom: 0.25rem; }
     .venue-dates { font-family: var(--mono); font-size: 1rem; color: var(--muted); letter-spacing: 0.06em; }
     .venue-desc { font-size: 0.9rem; color: var(--muted); margin-top: 0.6rem; font-weight: 300; line-height: 1.6; }
-
-    /* REGISTRATION */
-    .registration { background: var(--blue); }
-    .registration .section-label { color: rgba(200,50,10,0.85); }
-    .registration h2 { color: #fff; }
-    .reg-notice {
-      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 2px; padding: 1rem 1.4rem; font-size: 0.88rem;
-      color: rgba(255,255,255,0.65); margin: 0 auto 2.5rem auto; font-weight: 300;
-      display: flex; align-items: flex-start; gap: 0.75rem;
-      max-width: 600px; text-align: center; justify-content: center;
-    }
-
-    .reg-deadlines {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin: 0 auto 2.5rem auto;
-      max-width: 700px;
-    }
-    .reg-deadline-item {
-      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 2px; padding: 1rem 1.5rem;
-      display: flex; flex-direction: column; align-items: center; text-align: center;
-      min-width: 220px;
-    }
-    .reg-deadline-label {
-      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: rgba(200,50,10,0.85); margin-bottom: 0.35rem;
-    }
-    .reg-deadline-date {
-      font-family: var(--serif); font-size: 1.3rem; color: #fff;
-    }
-
-    .reg-cards {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 2.5rem;
-    }
-    .reg-card {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 2px; padding: 2.25rem;
-      width: 260px;
-      flex-shrink: 0;
-    }
-    .reg-card-location {
-      font-family: var(--mono); font-size: 1.2rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: rgba(200,50,10,0.85); margin-bottom: 0.9rem;
-    }
-    .reg-card h3 { color: #fff; font-size: 1.4rem; margin-bottom: 0.25rem; }
-    .reg-price {
-      font-family: var(--serif); font-size: 3rem; color: #fff;
-      line-height: 1; margin: 1rem 0 0.75rem;
-    }
-    .reg-price span { font-family: var(--mono); font-size: 0.85rem; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; }
-    .reg-note { font-size: 1rem; color: rgba(255,255,255,0.4); font-weight: 300; line-height: 1.6; }
-    .reg-payment {
-      font-size: 1.1rem; color: rgba(255,255,255,0.45); font-style: italic;
-      margin-bottom: 2rem; text-align: center;
-    }
-    .reg-cta-wrap { display: flex; justify-content: center; }
 
     /* SPEAKERS */
     .speakers { background: #fff; border-top: 1px solid var(--line); }
@@ -532,7 +462,6 @@
     @media (max-width: 960px) {
       .about-inner { grid-template-columns: 1fr; gap: 2rem; }
       .venues { grid-template-columns: 1fr; }
-      .reg-cards { flex-direction: column; align-items: center; }
       .contact-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
       .section { padding: 4rem 2rem; }
       nav { padding: 0.875rem 1.5rem; }
@@ -561,7 +490,6 @@
     <li><a href="#speakers">Speakers</a></li>
     <li><a href="#programme">Programme</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#registration" class="nav-cta">Register</a></li>
   </ul>
 </nav>
 
@@ -578,7 +506,7 @@
     </p>
     <p class="hero-venue-line">16 – 21 Nov 2026 &nbsp;·&nbsp; Australian National University &amp; Kioloa Coastal Campus</p>
     <div class="hero-actions">
-      <a href="#registration" class="btn-primary">Register Now →</a>
+      <a href="#programme" class="btn-primary">View Schedule →</a>
       <a href="#about" class="btn-secondary">Learn more</a>
     </div>
   </div>
@@ -599,14 +527,8 @@
         The workshop brings together national and international researchers from across the disciplines that touch high pressure science, alongside international invited speakers, for five days of talks, poster sessions, and structured discussion. The goal is not just scientific exchange but the beginning of something more sustained: shared networks, coordinated resources, and the foundation for future collaborative equipment bids.
       </p>
       <p>
-        Students and early career researchers are central to this. A dedicated one-day hands-on training session covers practical diamond anvil cell techniques, global facilities, and how to apply for beamtime at major synchrotron and neutron sources. Places are limited and are included in the registration fee.
+        Students and early career researchers are central to this. A dedicated one-day hands-on training session covers practical diamond anvil cell techniques, global facilities, and how to apply for beamtime at major synchrotron and neutron sources. Places are limited.
       </p>
-      
-      
-      <div class="center-wrap">
-        <a href="#registration" class="btn-primary">Registration Info →</a>
-      </div>
-      
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;">
       <div class="section-header">
@@ -628,10 +550,6 @@
           <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">19 – 21 Nov · Immersive coastal bush setting</div>
         </div>
         <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
-          <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Registration Deadline</div>
-          <div style="font-weight:500;font-size:1rem;">extended to 31 October 2026</div>
-        </div>
-        <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
           <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Contact</div>
           <div style="font-weight:500;font-size:1.2rem;">
             <a href="mailto:hprw@anu.edu.au" style="color:var(--accent);text-decoration:none;">hprw@anu.edu.au</a>
@@ -650,32 +568,22 @@
 <!-- TRAINING DAY -->
 <section class="section training" id="training">
   <div class="section-header">
-    <p class="section-label">Hands-On Training · Open to Students &amp; ECRs</p>
+    <p class="section-label">Hands-On Training · Students &amp; ECRs</p>
   </div>
   <h2>One-day training session</h2>
   <div class="training-inner">
     <div class="training-text">
       <p>
-        A dedicated one-day training session runs alongside the main programme and is <strong>included in the ANU registration fee</strong>. It offers practical, small-group instruction from experienced researchers.
+        A dedicated one-day training session runs alongside the main programme. It offers practical, small-group instruction from experienced researchers.
       </p>
       <p>
         The session covers the fundamentals of diamond anvil cell techniques, a guided overview of major international high pressure facilities, and how to navigate beamtime applications at synchrotron and neutron sources — the kind of practical knowledge that typically takes years to accumulate informally.
       </p>
-      <p class="training-cta-note">
-        If you are a student or early career researcher, this is worth registering for on its own merits. Secure your place early — numbers are strictly limited.
-      </p>
-      <div style="margin-top:2rem;">
-        <a href="#registration" class="btn-primary">Register to secure your place →</a>
-      </div>
     </div>
     <div class="training-details">
       <div class="training-detail-item">
         <div class="training-detail-label">Format</div>
         <div class="training-detail-val">One full day, small groups</div>
-      </div>
-      <div class="training-detail-item">
-        <div class="training-detail-label">Included in</div>
-        <div class="training-detail-val">ANU / Canberra registration — no additional cost</div>
       </div>
       <div class="training-detail-item">
         <div class="training-detail-label">Open to</div>
@@ -719,48 +627,6 @@
         <p class="venue-desc">ANU's Kioloa Coastal Campus, nestled between pristine bushland and the South Coast shoreline. An immersive setting fostering deeper collaboration through focused working sessions and the unique energy of Australia's natural landscape.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- REGISTRATION -->
-<section class="section registration" id="registration">
-  <div class="section-header">
-    <p class="section-label">Registration</p>
-  </div>
-  <h2>Secure your place</h2>
-  <div class="reg-deadlines">
-    <div class="reg-deadline-item">
-      <span class="reg-deadline-label">Registration Deadline</span>
-      <span class="reg-deadline-date">extended to 31 October 2026</span>
-    </div>
-  </div>
-  <div class="reg-cta-wrap" style="gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;">
-  </div>
-  <div class="reg-notice">
-    <span>📌</span>
-    <span>Everyone gets a poster presentation by default. Talks are via invitation or upon request. Please contact the organising committee if you would like to give an oral presentation. </span>
-  </div>
-  <div class="reg-cards">
-    <div class="reg-card">
-      <p class="reg-card-location">Canberra · ANU</p>
-      <p class="reg-price">$250 <span>AUD</span></p>
-      <p class="reg-note">Fee includes lunch, morning- and afternoon tea, one barbeque, and the hands-on training day for students and ECRs. Accommodation not included — participants book independently.</p>
-    </div>
-    <div class="reg-card">
-      <p class="reg-card-location">Kioloa · Coastal</p>
-      <p class="reg-price">$300 <span>AUD </span></p>
-      <p class="reg-note">Includes travel from Canberra, 2 nights accommodation, breakfast, lunch &amp; dinner.</p>
-    </div>
-  </div>
-  
-  <div class="reg-cta-wrap">
-    <a href="https://payments.anu.edu.au/general-events/booking?UDS_ACTION_DATA=bFomAUNHX3ZOKloLSkJDACxRQnc7L0IbVUkxLgdEUEUJR1BU"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="btn-primary"
-       style="font-size:1rem;padding:1rem 2.5rem;">
-       Pay here to confirm your registration →
-    </a>
   </div>
 </section>
 
