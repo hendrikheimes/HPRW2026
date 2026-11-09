@@ -268,6 +268,28 @@
     .venue-dates { font-family: var(--mono); font-size: 1rem; color: var(--muted); letter-spacing: 0.06em; }
     .venue-desc { font-size: 0.9rem; color: var(--muted); margin-top: 0.6rem; font-weight: 300; line-height: 1.6; }
 
+    /* FIND US / MAP */
+    .map-block {
+      margin-top: 2px; background: #fff; border-radius: 2px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 2rem 2rem 2.25rem;
+    }
+    .map-block-label {
+      font-family: var(--mono); font-size: 1rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(200,50,10,0.9); margin-bottom: 1.25rem;
+    }
+    .map-img {
+      width: 100%; max-width: 900px; height: auto; display: block;
+      border: 1px solid var(--line); border-radius: 2px;
+    }
+    .map-address { margin-top: 1.5rem; font-size: 1rem; color: var(--ink); line-height: 1.7; }
+    .map-address strong { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; display: block; margin-bottom: 0.2rem; }
+    .map-link {
+      display: inline-block; margin-top: 1rem; font-size: 0.85rem; font-weight: 500;
+      color: var(--accent); text-decoration: none; letter-spacing: 0.03em;
+    }
+    .map-link:hover { text-decoration: underline; }
+
     /* SPEAKERS */
     .speakers { background: #fff; border-top: 1px solid var(--line); }
     .speakers-intro {
@@ -628,6 +650,15 @@
       </div>
     </div>
   </div>
+  <div class="map-block">
+    <p class="map-block-label">Find us · Phase I</p>
+    <img class="map-img" src="assets/images/Location.svg" alt="Map showing the location of the Research School of Physics, Building 160, ANU">
+    <p class="map-address">
+      <strong>Research School of Physics, Building 160</strong>
+      60 Mills Rd, Acton ACT 2601
+    </p>
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Research+School+of+Physics+Building+160+60+Mills+Rd+Acton+ACT+2601" target="_blank" rel="noopener noreferrer">Open in Google Maps →</a>
+  </div>
 </section>
 
 <!-- SPEAKERS -->
@@ -727,7 +758,7 @@
     </div>
     <div class="contact-item">
       <span class="contact-label">Venue</span>
-      <span class="contact-val">Australian National University<br>Canberra, ACT 2601, Australia</span>
+      <span class="contact-val">Research School of Physics, Building 160<br>60 Mills Rd, Acton ACT 2601, Australia</span>
     </div>
     <div class="contact-item">
       <span class="contact-label">University</span>
