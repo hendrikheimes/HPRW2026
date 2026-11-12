@@ -195,6 +195,16 @@
     }
     .about-text p:last-of-type { margin-bottom: 1.8rem; }
 
+    /* PRACTICAL INFORMATION (Key Information box) */
+    .info-links { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; }
+    .info-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.95rem; font-weight: 500; color: var(--accent);
+      text-decoration: none; letter-spacing: 0.02em;
+    }
+    .info-link:hover { text-decoration: underline; }
+    .info-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
     /* TRAINING DAY */
     .training { background: var(--ink); }
     .training .section-label { color: rgba(200,50,10,0.85); }
@@ -267,6 +277,7 @@
     .venue-name { font-family: var(--serif); font-size: 1.7rem; color: var(--ink); margin-bottom: 0.25rem; }
     .venue-dates { font-family: var(--mono); font-size: 1rem; color: var(--muted); letter-spacing: 0.06em; }
     .venue-desc { font-size: 0.9rem; color: var(--muted); margin-top: 0.6rem; font-weight: 300; line-height: 1.6; }
+    .venue-actions { margin-top: 1.25rem; }
 
     /* FIND US / MAP */
     .map-block {
@@ -289,6 +300,11 @@
       color: var(--accent); text-decoration: none; letter-spacing: 0.03em;
     }
     .map-link:hover { text-decoration: underline; }
+    .map-actions {
+      display: flex; gap: 1.5rem; align-items: center; justify-content: center;
+      flex-wrap: wrap; margin-top: 1.25rem;
+    }
+    .map-actions .map-link { margin-top: 0; }
 
     /* SPEAKERS */
     .speakers { background: #fff; border-top: 1px solid var(--line); }
@@ -543,7 +559,7 @@
       </div>
       <h2>Building Australia's high pressure research community</h2>
       <p>
-        Australia has world-class high pressure researchers and and emerging high pressure infrastructure. What it lacks is a connected community. HPRW 2026 is a deliberate attempt to build one and link it to the international community.
+        Australia has world-class high pressure researchers and emerging high pressure infrastructure. What it lacks is a connected community. HPRW 2026 is a deliberate attempt to build one and link it to the international community.
       </p>
       <p>
         The workshop brings together national and international researchers from across the disciplines that touch high pressure science, alongside international invited speakers, for five days of talks, poster sessions, and structured discussion. The goal is not just scientific exchange but the beginning of something more sustained: shared networks, coordinated resources, and the foundation for future collaborative equipment bids.
@@ -570,6 +586,25 @@
           <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Phase II Venue</div>
           <div style="font-weight:500;font-size:1rem;">Kioloa Coastal Campus, New South Wales</div>
           <div style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem;">19 – 21 Nov · Immersive coastal bush setting</div>
+        </div>
+        <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
+          <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Practical Information</div>
+          <div class="info-links">
+            <a class="info-link" href="assets/How%20to%20find%20the%20workshop.pdf" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              How to find the workshop (PDF)
+            </a>
+            <a class="info-link" href="assets/Kioloa_Safety_Guide_v2.pdf" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              Kioloa Safety Guide (PDF)
+            </a>
+          </div>
         </div>
         <div style="background:var(--paper);padding:1.25rem 1.5rem;border-radius:2px;">
           <div style="font-family:var(--mono);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;">Contact</div>
@@ -647,6 +682,17 @@
         <p class="venue-name">Kioloa Coastal Campus</p>
         <p class="venue-dates">New South Wales, Australia</p>
         <p class="venue-desc">ANU's Kioloa Coastal Campus, nestled between pristine bushland and the South Coast shoreline. An immersive setting fostering deeper collaboration through focused working sessions and the unique energy of Australia's natural landscape.</p>
+        <div class="venue-actions">
+          <a href="assets/Kioloa_Safety_Guide_v2.pdf" target="_blank" rel="noopener" class="btn-pdf">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="12" y1="18" x2="12" y2="12"/>
+              <line x1="9" y1="15" x2="15" y2="15"/>
+            </svg>
+            Download Kioloa Safety Guide (PDF)
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -655,10 +701,21 @@
     <img class="map-img" src="assets/images/Location.svg" alt="Map showing the location of the Research School of Physics, Building 160, ANU">
     <p class="map-address">
       <strong>Research School of Physics, Building 160</strong>
-      60 Mills Rd, Acton ACT 2601
-      Talks to be held in Rooms 4.02 and 4.03 (Left hand side from the main entrance, up the stairs). Poster session in the Foyer in the main entrance area) 
+      60 Mills Rd, Acton ACT 2601<br>
+      Talks to be held in Rooms 4.02 and 4.03 (left-hand side from the main entrance, up the stairs). Poster session in the Foyer (main entrance area).
     </p>
-    <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Research+School+of+Physics+Building+160+60+Mills+Rd+Acton+ACT+2601" target="_blank" rel="noopener noreferrer">Open in Google Maps →</a>
+    <div class="map-actions">
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Research+School+of+Physics+Building+160+60+Mills+Rd+Acton+ACT+2601" target="_blank" rel="noopener noreferrer">Open in Google Maps →</a>
+      <a href="assets/How%20to%20find%20the%20workshop.pdf" target="_blank" rel="noopener" class="btn-pdf">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="18" x2="12" y2="12"/>
+          <line x1="9" y1="15" x2="15" y2="15"/>
+        </svg>
+        Download "How to find the workshop" (PDF)
+      </a>
+    </div>
   </div>
 </section>
 
